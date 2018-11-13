@@ -99,7 +99,7 @@ cell[i][j] = max of {
 # Longest common substring
 
 Search Engine Input: "HISH"
-Suggest "FISH" or "VISTA"?
+Suggest "FISH" or "VISTA" based on common substring?
 
 1. What am I trying to optimize? 
 Which is a closer match -
@@ -118,6 +118,14 @@ The original vs the suggested
 | I |
 | S |
 | H |
+
+| | H | I | S | H |
+|---|---|---|---|---|
+| V |
+| I |
+| S |
+| T |
+| A |
 
 If Substring includes previous letter
 
@@ -138,3 +146,46 @@ if word_a[i] == word_b[j]:
 else:
  cell[i][j] = 0
 ```
+| | H | I | S | H |
+|---|---|---|---|---|
+| V | 0 | 0 | 0 | 0 |
+| I | 0 | 1 | 0 | 0 |
+| S | 0 | 0 | 2 | 0 |
+| T | 0 | 0 | 0 | 0 |
+| A | 0 | 0 | 0 | 0 |
+
+# Longest common subsequence
+Biologist use longest common subsequence to find similarities in DNA strands. 
+git diff uses sdynamic programmng.
+
+Input: Fosh
+Suggest: Fish or Fort based on subsequence
+
+Now what if we want total number of characters shared in order?
+We're looking for a subsequence so our value has changed.
+
+| | F| O | S | H |
+|---|---|---|---|---|
+| F | 1 | 1 | 1 | 1 |
+| I | 1 | 1 | 1 | 1 |
+| S | 1 | 1 | 2 | 2 |
+| H | 1 | 2 | 2 | 3 |
+Longest subsequence = 3
+
+| | F| O | S | H |
+|---|---|---|---|---|
+| F | 1 | 1 | 1 | 1 |
+| O | 1 | 2 | 2 | 2 |
+| R | 1 | 2 | 2 | 2 |
+| T | 1 | 2 | 2 | 2 |
+Longest subsequence = 2
+
+1. If letters don't match, pick the larger of either top or left.
+2. if they do match, value = value of top-left Neighbor +1
+
+```
+if word_a[i] == word_b[j]:
+ cell[i][j] cell[i-1][j-1] + 1
+else:
+ cell[i][j] = max(cell[i-1][j], cell[i][j-1])
+ ```
