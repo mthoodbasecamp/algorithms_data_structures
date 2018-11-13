@@ -125,6 +125,16 @@ If Substring includes previous letter
 |---|---|---|---|---|
 | F | 0 | 0 | 0 | 0 |
 | I | 0 | 1 | 0 | 0 |
-| S | 0 | 1 | 2 | 0 |
-| H | 0 | 1 | 2 | 3 |
+| S | 0 | 0 | 2 | 0 |
+| H | 0 | 0 | 0 | 3 |
 
+Formula could be expressed:
+1) If letters don't match, value = 0
+2) If letters do match, value = top-left neighbor +1
+
+```
+if word_a[i] == word_b[j]:
+ cell[i][j] = cell[i-1][j-1] + 1
+else:
+ cell[i][j] = 0
+```
