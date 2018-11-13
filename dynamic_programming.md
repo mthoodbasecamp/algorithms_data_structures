@@ -16,7 +16,9 @@ Keeps progressivly building estimates.
    1. Goal: Maximize value. 
    2. Content: What you're trying to optimize.
   2. How do we divide into subroutines?
-   1. Helps set axes
+   1. Thre's no easy way to calculate formula. You have to experiment and find something that works.
+Sometimes, algorithms aren't an exact recipe. They're a framework tahat you build your idea on top of.
+   2. Helps set axes
   3. What are the axes of grid? From #2
   4. Account for granularily (0.5 vs 1)
  2. Recursion
@@ -117,4 +119,12 @@ The original vs the suggested
 | S |
 | H |
 
+If Substring includes previous letter
+
+| | H | I | S | H |
+|---|---|---|---|---|
+| F | 0 | 0 | 0 | 0 |
+| I | 0 | 1 | 0 | 0 |
+| S | 0 | 1 | 2 | 0 |
+| H | 0 | 1 | 2 | 3 |
 
