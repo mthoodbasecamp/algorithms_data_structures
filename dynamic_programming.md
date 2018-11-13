@@ -1,11 +1,36 @@
 # Dynamic Programming
 
-Method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions using a memory-based data structure (array, map,etc)
+Method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions using a memory-based data structure (array, map,etc).
+Keeps progressivly building estimates.
+
+## When to use
+
+1. Constraint - When trying to optimize something given a contraint. Knapsack = value of goods constrained by knapsack size.
+2. Discrete subproblems - Dynamic programming only works when each subproblem is discrete - when it doesn't depend on other subproblems.
+
+## Technique
  
  1. Grid
+  1. Account for granularily (0.5 vs 1)
  2. Recursion
  3. Memoization
  4. Bottom-up
+ 
+ ## Questions
+ 
+ 1. Can I add more items? 
+ Yes, Dynamic Programming keeps progressivly building estimates.
+ 2. Can value of estimates go down as we move down? 
+ No, we are building current max estimate. Can't get worse than it was before.
+ 3. Can we change order?
+ Yes, order doesn't matter.
+ 4. Can I add smaller items?
+ Yes, but must change interval.
+ 5. Can I take fraction of item?
+ No, not in dynamic programming. Either take an item or not.
+ Solve by using Greedy Algorithm and take by highest value item first.
+ 5. Can rows/subproblems be dependents on each other?
+ No, nly works when each subproblem is discrete.
  
  # Knapsack
  
