@@ -3,6 +3,7 @@
 Method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions using a memory-based data structure (array, map,etc).
 Keeps progressivly building estimates.
 
+
 ## When to use
 
 1. Constraint - When trying to optimize something given a contraint. Knapsack = value of goods constrained by knapsack size.
@@ -11,7 +12,13 @@ Keeps progressivly building estimates.
 ## Technique
  
  1. Grid
-  1. Account for granularily (0.5 vs 1)
+  1. What are values of cells?
+   1. Goal: Maximize value. 
+   2. Content: What you're trying to optimize.
+  2. How do we divide into subroutines?
+   1. Helps set axes
+  3. What are the axes of grid? From #2
+  4. Account for granularily (0.5 vs 1)
  2. Recursion
  3. Memoization
  4. Bottom-up
@@ -86,3 +93,28 @@ cell[i][j] = max of {
 |Guitar| G : $1500 |G : $1500 | G : $1500 | G : $1500 | <- Old Estimate
 |Stereo| G : $1500 |G : $1500 | G : $1500 | S : $3000 | <- New Estimate
 |Laptop| G : $1500 |G : $1500 | L : $2000 | L + G : 32500 | <- Final Estimate
+
+# Longest common substring
+
+Search Engine Input: "HISH"
+Suggest "FISH" or "VISTA"?
+
+1. What am I trying to optimize? 
+Which is a closer match -
+Length of substring two values have in commong.
+
+2. Subroutines?
+Compare substrings. Each cell will contain length of longest substring.
+Therefore, Axes will probably be two substrings.
+
+3. Axes
+The original vs the suggested
+
+| | H | I | S | H |
+|---|---|---|---|---|
+| F |
+| I |
+| S |
+| H |
+
+
