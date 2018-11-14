@@ -23,7 +23,7 @@ Process
 6. Cheaper to go through current node? Yes
   1. Update neighbor's Cost hash w new cost
   2. Update neighgbor's Parent hash with current Node
-5. Add current Node to processed list.
+7. Add current Node to processed list.
 
 
 ```
