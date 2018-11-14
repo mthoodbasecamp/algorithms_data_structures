@@ -9,7 +9,7 @@ Shortest path to X for weighted graphs.
 
 1. Graph
 2. Parents
-3. Cost
+3. Cost - How long it takes to get to that node from the start
 4. List/Array to keep track of nodes already processed.
 
 
@@ -33,3 +33,20 @@ graph["b"]["fin"]=5
 |a|fin|4|
 |b|a|5|
 | |fin|5|
+
+## Costs
+How long it takes to get to that node from the start
+
+```
+infinity = float("inf")
+costs ={}
+costs["a"] = 6
+costs["b"] = 3
+costs["fin"] = infinity
+```
+
+|Node|Costs|
+|---|---|
+|a|6|
+|b|3|
+|fin|infinity|
