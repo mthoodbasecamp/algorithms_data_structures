@@ -2,10 +2,11 @@
 Way to represent networks.
 
 ## Breadth-First Search
-If there's a path from A to B.
+If there's a path from A to B. 
 
-## Dijkstra's algorithm
+## Dijkstra's Algorithm
 Shortest path to X for weighted graphs.
+Greedy Alorithm: Always looks for highest value first.
 
 1. Graph - Hash representation of model
 2. Parents - What path it takes to get to that node from parent chain.
@@ -14,11 +15,16 @@ Shortest path to X for weighted graphs.
 
 Process
 
-1. While we have Nodes to process
-2. Find lowest cost node we haven't processed. Will return None with "finish"
-3. Check out neighbors node. If it's cheaper to get to Neighbor by going through this Node then update neighbor's cost
-4. If update, Update neighgbor parent w/ new Node
-5. Current Node = processed
+1. Find lowest cost node not in processed array
+2. While we have Nodes to process
+3. Collect node's neighbors via graph hash. 
+4. Collect node's neighbor's cost via Costs hash. 
+5. Compare node's neighbor's cost. 
+6. Cheaper to go through current node? Yes
+  1. Update neighbor's Cost hash w new cost
+  2. Update neighgbor's Parent hash with current Node
+5. Add current Node to processed list.
+
 
 ```
 
